@@ -13,7 +13,7 @@ if [ ! -d "build" ]; then
 fi
 
 cd build
-cmake ..
+cmake .. -DCOPY_CLANGD=ON -DCOPY_CLANG_FORMAT=ON
 
 # wait until compile_commands.json exists and is not empty
 while [ ! -s compile_commands.json ]; do

@@ -1,6 +1,10 @@
 /build/
 .cache/
 /compile_commands.json
+/.clangd
+/.clang-format
+!/config/.clangd
+!/config/.clang-format
 
 *.o
 *.obj

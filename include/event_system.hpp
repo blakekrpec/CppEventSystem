@@ -1,23 +1,36 @@
-#include <functional>
-#include <vector>
+#ifndef EVENTSYSTEM_HPP
+#define EVENTSYSTEM_HPP
 
-template <typename... args> class EventSystem
+#include <functional>
+#include <mutex>
+
+template<typename event_type>
+class EventSystem 
 {
-	using listener = std::function<void(args...)>;
+    using listener = std::function<void(const event_type&)>;
+    std::mutex mtx;
 
   public:
-	void AddSubscriber(listener l)
-	{
-		listeners.push_back(l);
-	}
-	void OnInvoke(args... a)
-	{
-		for (auto &listener : listeners)
-		{
-			listener(a...);
-		}
-	}
+    void addSubscriber(listener&& l)
+    {
+        std::lock_guard<std::mutex> lock(mtx);
+        listeners.push_back(std::move(l));
+
+    }
+
+    void onInvoke(const event_type& event)
+    {
+        std::lock_guard<std::mutex> lock(mtx);
+
+        for (auto& listener : listeners)
+        {
+            listener(event);
+        }
+    }
 
   private:
-	std::vector<listener> listeners;
+    std::vector<listener> listeners;
+
 };
+
+#endif //EVENTSYSTEM_HPP
