@@ -33,7 +33,9 @@ Extract the `.zip` file to a folder, e.g., `C:\Tools\ninja\`. Inside, find `ninj
 
 Add `ninja.exe` to `PATH`: Press `Win + R` and type `sysdm.cpl`, press `Enter`
 
-Under `System variables`, find and select `Path`, then click `Edit`.
+Under `Advanced` tab, find `Environment Variable`, and click it.
+
+Find and select `Path`, then click `Edit`.
 
 Click `New`, then add the path to the folder where `ninja.exe` is (e.g., `C:\Tools\ninja\`)
 
