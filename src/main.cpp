@@ -1,4 +1,3 @@
-#include <cmath>
 #include <iostream>
 #include <thread>
 
@@ -6,11 +5,11 @@
 #include <player.hpp>
 #include <random01.hpp>
 
-// Simple script demonstrating an event-based system in C++. 
-// The player object subscribes to `enemy_hit` and `health_change` events. 
-// When these events are invoked, the associated player methods are executed. 
-// This decouples objects, enabling indirect communication—useful in large systems 
-// (e.g., games) to reduce tight coupling between classes.
+// Simple script demonstrating an event-based system in C++.
+// The player object subscribes to `enemy_hit` and `health_change` events.
+// When these events are invoked, the associated player methods are executed.
+// This decouples objects, enabling indirect communication—useful in large
+// systems (e.g., games) to reduce tight coupling between classes.
 
 int main()
 {
@@ -19,13 +18,13 @@ int main()
 
 	Player player(5, 50.0f);
 
-    // `player.onEnemyHit` is a non-static method, but `addSubscriber` expects 
-    // a `std::function`, which requires a static-like callable. 
-    // We wrap the member function in a lambda to bind it to the player instance.
-    // Alternatively, `std::bind` could be used instead of a lambda.
+	// `player.onEnemyHit` is a non-static method, but `addSubscriber` expects
+	// a `std::function`, which requires a static-like callable.
+	// We wrap the member function in a lambda to bind it to the player
+	// instance. Alternatively, `std::bind` could be used instead of a lambda.
 	enemy_hit.addSubscriber([&player](int hits) { player.onEnemyHit(hits); });
-    // Same explanation as above—lambda wraps a non-static method to allow 
-    // subscription to the event system.
+	// Same explanation as above—lambda wraps a non-static method to allow
+	// subscription to the event system.
 	health_change.addSubscriber([&player](float damage)
 								{ player.onDamageTaken(damage); });
 
@@ -33,13 +32,13 @@ int main()
 	{
 		int hit_chance = random01();
 
-        // If the player succesfully hits enemy.
+		// If the player succesfully hits enemy.
 		if (hit_chance > 0)
 		{
 			enemy_hit.onInvoke(1);
 			std::cout << "Player hit enemy." << std::endl;
 		}
-        // If the player misses and takes damage.
+		// If the player misses and takes damage.
 		else
 		{
 			health_change.onInvoke(10.0f);
