@@ -9,6 +9,7 @@ class Player
 	int enemies_hit;
 	float health;
 
+	// Constructor with optional args.
 	Player(int enemies_hit = 0, float health = 100.0f)
 		: enemies_hit(enemies_hit), health(health)
 	{
