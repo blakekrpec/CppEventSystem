@@ -30,7 +30,7 @@ For Windows, to generate a compile_commands.json (for my nvim clangd LSP) I used
 
 To install Ninja on Windows:
 
-Downlaod latest `ninja-win.zip`:
+Download latest `ninja-win.zip`:
 ```
 https://github.com/ninja-build/ninja/releases
 ```
