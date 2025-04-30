@@ -1,4 +1,4 @@
-This project is an exploration of event driven programming in C++. I recently utilized C#'s built in event support in a Unity project and want to explore what this could look like in C++ using std::function.
+This project is an exploration of event driven programming in C++. I recently utilized C#'s built in event support in a Unity project and wanted to explore what this could look like in C++ using std::function.
 
 
 Care was taken to make this cross-compile on my Ubuntu, and Windows machines. 
