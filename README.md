@@ -35,7 +35,7 @@ Download latest `ninja-win.zip`:
 https://github.com/ninja-build/ninja/releases
 ```
 
-Extract the `.zip` file to a folder, e.g., `C:\Tools\ninja\`. Inside, find `ninja.exa`.
+Extract the `.zip` file to a folder, e.g., `C:\Tools\ninja\`. Inside, find `ninja.exe`.
 
 Add `ninja.exe` to `PATH`: Press `Win + R` and type `sysdm.cpl`, press `Enter`
 
@@ -44,6 +44,10 @@ Under `Advanced` tab, find `Environment Variable`, and click it.
 Find and select `Path`, then click `Edit`.
 
 Click `New`, then add the path to the folder where `ninja.exe` is (e.g., `C:\Tools\ninja\`)
+
+Click `OK` to close dialogs.
+
+Verify installation: `ninja --version`
 
 #### To build
 
@@ -66,7 +70,5 @@ For a clean build:
 ```
 
 
-Click `OK` to close dialogs.
 
-Verify installation: `ninja --version`
 
