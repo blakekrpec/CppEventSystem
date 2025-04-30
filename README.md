@@ -26,9 +26,9 @@ For a clean build:
 ```
 
 ### Windows
-For Windows, to generate a compile_commands.json (for my nvim clangd LSP) I used Ninja. If you don't care about having a compile_commands.json you should be able to build with out of the box CMake on Windows.
+For Windows, to generate a compile_commands.json (for my nvim clangd LSP) I used Ninja. If you don't care about having a compile_commands.json, skip the Install Ninja section as you should be able to build with out of the box CMake on Windows.
 
-To install Ninja on Windows:
+#### Install Ninja:
 
 Download latest `ninja-win.zip`:
 ```
