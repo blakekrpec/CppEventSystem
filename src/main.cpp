@@ -5,7 +5,7 @@
 #include <player.hpp>
 #include <random01.hpp>
 
-// Simple script demonstrating an event-based system in C++.
+// Simple app demonstrating an event-based system in C++.
 // The player object subscribes to `enemy_hit` and `health_change` events.
 // When these events are invoked, the associated player methods are executed.
 // This decouples objects, enabling indirect communication—useful in large
