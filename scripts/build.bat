@@ -19,7 +19,7 @@ if not exist build (
 cd build
 
 REM Run CMake
-cmake -G "Ninja" -DCOPY_CLANGD=ON -DCOPY_CLANG_FORMAT=ON ..
+cmake -G "Ninja" ..
 
 REM Wait until compile_commands.json exists and is not empty
 :wait_loop

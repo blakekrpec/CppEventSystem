@@ -1,9 +1,11 @@
-#include <iostream>
-#include <thread>
-
+// CPP Event System
 #include <event_system.hpp>
 #include <player.hpp>
 #include <random01.hpp>
+
+// STL
+#include <iostream>
+#include <thread>
 
 // Simple app demonstrating an event-based system in C++.
 // The player object subscribes to `enemy_hit` and `health_change` events.
@@ -30,7 +32,7 @@ int main()
 
 	while (true)
 	{
-		int hit_chance = random01();
+		const int hit_chance = random01();
 
 		// If the player succesfully hits enemy.
 		if (hit_chance > 0)

@@ -4,7 +4,6 @@ This project is an exploration of event driven programming in C++. I recently ut
 Care was taken to make this cross-compile on my Ubuntu, and Windows machines. 
 
 ### Ubuntu
-I use clangd LSP in nvim, but g++ to compile. So to tell clangd where to find g++ headers, the `.clangd` file in `/config/` of this Project needs to be copied into root of project. The CMakeLists.txt file does this if you are on Linux and pass the flag `-DCMAKE_COPY_CLANGD=ON` (as seen in `scripts/build.sh`). Same for the flag `-DCMAKE_COPY_CLANG_FORMAT=ON` in `scripts/build.sh`. You can remove these flags if you don't want `.clangd` and `.clang-format` copied into porject root on your Linux machine.
 
 #### To build
 ```
@@ -26,9 +25,9 @@ For a clean build:
 ```
 
 ### Windows
-For Windows, to generate a compile_commands.json (for my nvim clangd LSP) I used Ninja. If you don't care about having a compile_commands.json, skip the Install Ninja section as you should be able to build with out of the box CMake on Windows.
+For Windows, to generate a compile_commands.json (for my nvim clangd LSP) I used Ninja. If you don't care about having a compile_commands.json, skip the Install Ninja section as you should be able to build with out of the box CMake on Windows. Also will need to remove the -DCMAKE_EXPORT_COMPILE_COMMANDS flag from CMakeLists.txt.
 
-#### Install Ninja:
+#### Install Ninja (Not Required):
 
 Download latest `ninja-win.zip`:
 ```
